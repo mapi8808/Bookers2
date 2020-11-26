@@ -2,8 +2,8 @@
 <table>
     <thead>
         <tr>
-            <th>Title</th>
-            <th>Body</th>
+            <th>name</th>
+            <th>introduction</th>
             <th colspan="3"></th>
         </tr>
     </thead>
@@ -14,8 +14,6 @@
   <td><%= book.title %></td>
    <td><%= book.body %></td>
    <td><%= link_to 'Show', book_path(book.id), class:"show_#{book.id}" %></td>
-    <td><%= link_to "Edit", edit_book_path(book.id), class:"edit_#{book.id}" %></td>
-    <td><%= link_to 'Destroy', book_path(book.id), method: :delete, data: { confirm: "Are you sure?" }, class:"destroy_#{book.id}" %></td>
    </tr>
      <% end %>
    </tbody>
