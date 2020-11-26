@@ -1,2 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+ <% end %>
+ 
+ <% if flash[:update] %>
+      <div class="flash">
+        <%= flash[:update] %>
+      </div>
+ <% end %>
+ 
+<h2>Books</h2>
