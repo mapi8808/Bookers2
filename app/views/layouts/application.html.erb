@@ -11,13 +11,28 @@
 
   <body>
     <% if user_signed_in? %>
+    <!--　ログイン時のHomeをクリックして、usersのshow画面に移動したいけど、
+    エラーになるので、一旦Homeへ-->
       <li>
-        <%= link_to "logout", destroy_user_session_path, method: :delete %>
+        <%= link_to "Home", root_path %> 
+      </li>
+      
+      <li>
+        <%= link_to "Users", users_path %>
       </li>
       <li>
         <%= link_to 'Books', books_path %>
       </li>
+      <li>
+        <%= link_to "logout", destroy_user_session_path, method: :delete %>
+      </li>
     <% else %>
+      <li>
+        <%= link_to "Home", root_path %>
+      </li>
+      <li>
+        <%= link_to "About", root_path %>
+      </li>
       <li>
         <%= link_to "sign up", new_user_registration_path %>
       </li>
