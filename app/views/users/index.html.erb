@@ -8,17 +8,21 @@
         </tr>
     </thead>
 
+<tbody>
+<% @users.each do |user| %>
 <div class="profile-container">
-  <h3 class="profile-name"><%= @user.name %></h3>
+  <h3 class="profile-image"><%= @user.image %></h3>
   <%= image_tag('sample-author1.jpg') %>
+  <!--構文が合っているのか？-->
+  <h3 class="profile-name"><%= @user.name %></h3>
    <td><%= link_to 'Show', user_path(user.id), class:"show_#{user.id}" %></td>
 </div>
   
 <!--アプリケーションを作ろう２の５章を確認しながら作っていたが、合っているのか。アタッチメントのprofile_imageは適用されてるのか？-->
-<% @books.each do |book| %>
+
 <div>
   <%= link_to books_path(book.id) do %>
-    <%= attachment_profile_image_tag book, :image %>
+    <%= attachment_image_tag book, :image %>
   <% end %>
   <p>投稿ユーザー画像：<%= image_tag('sample-author1.jpg') %></p>
   <p>ショップ名：<%= post_image.shop_name %></p>
@@ -26,4 +30,11 @@
   <p>ユーザーネーム：<%= post_image.user.name %></p>
 </div>
 <% end %>
+ </tbody>
+</table>
 <%= paginate @books %>
+<!--@users?-->
+
+ 
+  
+  
