@@ -10,14 +10,14 @@
 　<tbody>
 　<% @books.each do |book| %>
 　　<div class="profile-container">
-    <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+    <%= attachment_image_tag @user, :profile_image, :fill, 20, 20, format: 'png', fallback: "no_image.png" %>
  <h4>Title</h4>
  <span>
     <%= link_to book.title, book_path(book.id) %>
     <!--構文合ってる？-->
  </span>
  <h4>Opinion</h4>
-  <h3 class="profile-Opinion"><%= book.bo %></h3>
+  <h3 class="profile-opinion"><%= book.body %></h3>
    
    </div>
   <% end %>
