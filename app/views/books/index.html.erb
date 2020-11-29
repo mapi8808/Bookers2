@@ -1,3 +1,4 @@
+
 <h1>Books</h1>
 <table>
     <thead>
@@ -13,8 +14,11 @@
 <tr>
  <div class="profile-container">
   <td><%= attachment_image_tag book.user, :profile_image, :fill, 20, 20, format: 'png', fallback: "no_image.png" %></td>
-  <td><%= link_to book_path(book.id) %>
+  <td>
   <%= book.title %>
+  </td>
+  <td>
+  <%= book.body %>
   </td>
  </tr>
  </div>
@@ -23,6 +27,6 @@
 <% end %>
  </tbody>
 </table>
-<%= render 'users/list', users: @users %>
+
 <%#= paginate @books %>
 <!--@users?-->

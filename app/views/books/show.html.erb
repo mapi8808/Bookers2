@@ -1,24 +1,19 @@
+<%= render 'users/list', users: @users %>
 <h2>Book detail</h2>
 <table>
 　<tbody>
-　<% if @user.id == current_user.id %>
-　<% @users.each do |user| %>
-　　<div class="profile-container">
-    <h3 class="profile-image"><%= @user.image %></h3>
-    <%= image_tag('sample-author1.jpg') %>
-    <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+　<div class="profile-container">
+   <%= attachment_image_tag @user, :profile_image, :fill, 20, 20, format: 'png', fallback: "no_image.png" %>
  <h4>Title</h4>
  <span>
-    <%= link_to user.title, book_path(list.id) %>
+    <%=  @book.title  %>
     <!--構文合ってる？-->
  </span>
  <h4>Opinion</h4>
-  <h3 class="profile-Opinion"><%= @user.Opinion %></h3>
+  <h3 class="profile-Opinion"><%= @book.body %></h3>
    
    </div>
-  <% end %>
  </tbody>
 </table>
 <!--下のはいらない？-->
 <!--@books（モデルBook)なので、-->
-<%= render 'users/list', users: @users %>
