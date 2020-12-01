@@ -2,18 +2,17 @@
 <h2>Book detail</h2>
 <table>
 　<tbody>
+　<tr>
 　<div class="profile-container">
-   <%= attachment_image_tag @user, :profile_image, :fill, 20, 20, format: 'png', fallback: "no_image.png" %>
-   
- <h4>Title</h4>
- <span>
+   <td><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, format: 'png', fallback: "no_image.png" %></td>
+ <td>
     <%=  @book.title  %>
     <!--構文合ってる？-->
- </span>
- <h4>Opinion</h4>
-  <h3 class="profile-Opinion"><%= @book.body %></h3>
-   
+ </td>
+  <div class="profile-Opinion">
+   <td><%= @book.body %></td>
    </div>
+   </tr>
  </tbody>
 </table>
 <!--下のはいらない？-->
