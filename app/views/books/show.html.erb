@@ -4,7 +4,8 @@
 　<tbody>
 　<tr>
 　<div class="profile-container">
-   <td><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, format: 'png', fallback: "no_image.png" %></td>
+   <td><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, format: 'png', fallback: "no_image.png" %><br>
+   <%= link_to @user.name, user_path(@user)%></td>
  <td><%= @book.title %></td>
  
   <div class="profile-Opinion">
@@ -12,7 +13,6 @@
    <td><%= link_to "Edit", edit_book_path(@book), class:"edit_#{@book}" %></td>
     <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, class:"destroy_#{@book}" %></td>
    </div>
-   
    </tr>
  </tbody>
 </table>

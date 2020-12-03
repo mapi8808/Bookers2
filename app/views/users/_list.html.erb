@@ -1,7 +1,16 @@
 <h1>User info</h1>
 <%= attachment_image_tag @user, :profile_image, :fill, 80, 80, format: 'png', fallback: "no_image.png" %>
-<h4>Name</h4>
-<h4>introduction</h4>
+<p>
+<strong>Name</strong>
+<%= @user.name %>
+</p>
+<p>
+<strong>introduction</strong>
+<%= @user.introduction %>
+</p>
+<div>
+<%= link_to "ユーザー設定", edit_user_path(@user)  %>
+</div>
 
 <h1>New book</h1>
   <%= form_with model:@book, local:true do |f| %>
