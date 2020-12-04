@@ -41,7 +41,6 @@ before_action :authenticate_user!, only: [:create, :update, :edit, :destroy]
   def destroy
    book = Book.find(params[:id])
    if book.destroy
-   flash[:destroy] = "Book was successfully destroyed."
    redirect_to books_path
    end
   end 

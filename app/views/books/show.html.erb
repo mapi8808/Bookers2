@@ -4,7 +4,7 @@
 　<tbody>
 　<tr>
 　<div class="profile-container">
-   <td><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, format: 'png', fallback: "no_image.png" %><br>
+   <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'png', fallback: "no_image.png" %><br>
    <%= link_to @user.name, user_path(@user)%></td>
  <td><%= @book.title %></td>
  
