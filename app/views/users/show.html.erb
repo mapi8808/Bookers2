@@ -1,3 +1,9 @@
+<% if flash[:update] %>
+      <div class="flash">
+        <%= flash[:update] %>
+      </div>
+ <% end %>
+
 <%= render 'users/list', users: @users %>
 <h2>Books</h2>
 <table>
