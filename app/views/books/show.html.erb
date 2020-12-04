@@ -1,10 +1,10 @@
-<%= render 'users/list', users: @users %>
-
- <% if flash[:update] %>
+<% if flash[:update] %>
       <div class="flash">
         <%= flash[:update] %>
       </div>
  <% end %>
+
+<%= render 'users/list', users: @users %>
 
 <h2>Book detail</h2>
 <table>
