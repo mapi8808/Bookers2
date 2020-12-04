@@ -1,10 +1,15 @@
 <%= render 'users/list', users: @users %>
 
+ <% if flash[:update] %>
+      <div class="flash">
+        <%= flash[:update] %>
+      </div>
+ <% end %>
 
 <h2>Book detail</h2>
 <table>
-　<tbody>
-　<tr>
+  <tbody>
+  <tr>
 　<div class="profile-container">
    <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'png', fallback: "no_image.png" %><br>
    <%= link_to @user.name, user_path(@user)%></td>
