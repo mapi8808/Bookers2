@@ -3,6 +3,18 @@
         <%= flash[:update] %>
       </div>
  <% end %>
+ 
+ <% if flash[:signin] %>
+      <div class="flash">
+        <%= flash[:signin] %>
+      </div>
+ <% end %>
+ 
+ <% if flash[:signup] %>
+      <div class="flash">
+        <%= flash[:signup] %>
+      </div>
+ <% end %>
 
 <%= render 'users/list', users: @users %>
 <h2>Books</h2>
