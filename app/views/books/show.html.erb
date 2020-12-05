@@ -4,6 +4,12 @@
       </div>
  <% end %>
 
+<% if flash[:create] %>
+      <div class="flash">
+        <%= flash[:create] %>
+      </div>
+ <% end %>
+
 <%= render 'users/list', users: @users %>
 
 <h2>Book detail</h2>
