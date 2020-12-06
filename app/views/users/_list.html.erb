@@ -1,19 +1,19 @@
 <h1>User info</h1>
-<%= attachment_image_tag @user, :profile_image, :fill, 90, 90, format: 'png', fallback: "no_image.png" %>
+<%= attachment_image_tag user, :profile_image, :fill, 90, 90, format: 'png', fallback: "no_image.png" %>
 <p>
 <strong>Name</strong>
-<%= @user.name %>
+<%= user.name %>
 </p>
 <p>
 <strong>introduction</strong>
-<%= @user.introduction %>
+<%= user.introduction %>
 </p>
 <div>
-<%= link_to "ユーザー設定", edit_user_path(@user)  %>
+<%= link_to "ユーザー設定", edit_user_path(user)  %>
 </div>
 
 <h1>New book</h1>
-  <%= form_with model:@book, local:true do |f| %>
+  <%= form_with model:book, local:true do |f| %>
   <h4>Title</h4>
   <label for="inputTitle"></label>
   <%= f.text_field :title, autofocus: true, id:"inputTitle", placeholder:"title"%>
