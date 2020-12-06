@@ -4,17 +4,10 @@
       </div>
  <% end %>
  
- <% if flash[:signin] %>
-      <div class="flash">
-        <%= flash[:signin] %>
-      </div>
+ <% flash.each do |key, value| %>
+   <%= content_tag(:div, value, class: "#{key}") %>
  <% end %>
  
- <% if flash[:signup] %>
-      <div class="flash">
-        <%= flash[:signup] %>
-      </div>
- <% end %>
 
 <%= render 'users/list', user: @user, book: @book_new %>
 <h2>Books</h2>
