@@ -8,8 +8,13 @@
    <%= content_tag(:div, value, class: "#{key}") %>
  <% end %>
  
+<div class="container">
+  <div class="row">
+      <div class="col-lg-4" >
+      <%= render 'users/list', user: @user, book: @book_new%>
+    </div>
 
-<%= render 'users/list', user: @user, book: @book_new %>
+<div class="col-lg-8">
 <h2>Books</h2>
 <table>
  <thead>
@@ -36,5 +41,4 @@
   <% end %>
  </tbody>
 </table>
-<!--下のはいらない？-->
-<!--@books（モデルBook)なので、-->
+</div>

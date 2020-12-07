@@ -1,4 +1,4 @@
-<h1>User info</h1>
+<h2>User info</h2>
 <%= attachment_image_tag user, :profile_image, :fill, 90, 90, format: 'png', fallback: "no_image.png" %>
 <p>
 <strong>Name</strong>
@@ -12,7 +12,7 @@
 <%= link_to "ユーザー設定", edit_user_path(user)  %>
 </div>
 
-<h1>New book</h1>
+<h2>New book</h1>
   <%= form_with model:book, local:true do |f| %>
   <h4>Title</h4>
   <label for="inputTitle"></label>

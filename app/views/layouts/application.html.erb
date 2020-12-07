@@ -11,9 +11,9 @@
 
   <body>
   <header class = "navbar navbar-expand-lg navbar-dark bg-dark" >
+  <div class="container"> 
+  <div class="row"> 
     <% if user_signed_in? %>
-    <!--　ログイン時のHomeをクリックして、usersのshow画面に移動したいけど、
-    エラーになるので、一旦Homeへ-->
       <li>
         <%= link_to "Bookers", root_path, class: "navbar-brand" %> 
       </li>
@@ -46,6 +46,8 @@
         <%= link_to "login", new_user_session_path, class: "fas fa-sign-in-alt nav-link text-light" %>
       </li>
       <% end %>
+      </div> 
+      </div> 
       </header>
     <%= yield %>
   </body>
