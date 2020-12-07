@@ -10,6 +10,7 @@
   </head>
 
   <body>
+  <header>
     <% if user_signed_in? %>
     <!--　ログイン時のHomeをクリックして、usersのshow画面に移動したいけど、
     エラーになるので、一旦Homeへ-->
@@ -33,7 +34,7 @@
         <%= link_to "Bookers", root_path %> 
       </li>
       <li>
-        <%= link_to "Home", root_path %>
+        <%= link_to "Home", root_path, class: "fas fa-home nav-link text-light"  %>
       </li>
       <li>
         <%= link_to "About", homes_about_path %>
@@ -44,7 +45,8 @@
       <li>
         <%= link_to "login", new_user_session_path %>
       </li>
-    <% end %>
+      <% end %>
+      </header>
     <%= yield %>
   </body>
 </html>
