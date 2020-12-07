@@ -10,12 +10,12 @@
   </head>
 
   <body>
-  <header>
+  <header class = "navbar navbar-expand-lg navbar-dark bg-dark" >
     <% if user_signed_in? %>
     <!--　ログイン時のHomeをクリックして、usersのshow画面に移動したいけど、
     エラーになるので、一旦Homeへ-->
       <li>
-        <%= link_to "Bookers", root_path %> 
+        <%= link_to "Bookers", root_path, class: "navbar-brand" %> 
       </li>
       <li>
         <%= link_to "Home", user_path(current_user.id), class: "fas fa-home nav-link text-light" %> 
@@ -31,7 +31,7 @@
       </li>
     <% else %>
       <li>
-        <%= link_to "Bookers", root_path %> 
+        <%= link_to "Bookers", root_path, class: "navbar-brand" %> 
       </li>
       <li>
         <%= link_to "Home", root_path, class: "fas fa-home nav-link text-light" %>
