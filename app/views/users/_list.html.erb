@@ -1,4 +1,3 @@
-
 <h2>User info</h2>
 <%= attachment_image_tag user, :profile_image, :fill, 90, 90, format: 'png', fallback: "no_image.png" %>
 <p>
@@ -10,7 +9,7 @@
 <%= user.introduction %>
 </p>
 <div>
-<%= link_to "ユーザー設定", edit_user_path(user), class: "btn btn-default"  %>
+<%= link_to "ユーザー設定", edit_user_path(user), class: "btn btn-outline-secondary"%>
 </div>
 
   <h2>New book</h1>
