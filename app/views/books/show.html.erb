@@ -2,36 +2,33 @@
       <div class="flash">
         <%= flash[:update] %>
       </div>
- <% end %>
+<% end %>
 
 <% if flash[:create] %>
       <div class="flash">
         <%= flash[:create] %>
       </div>
- <% end %>
+<% end %>
 
-  <div class="row">
-      <div class="col-lg-4" >
-      <%= render 'users/list', user: @user, book: @book_new%>
+<div class="row">
+    <div class="col-lg-4" >
+        <%= render 'users/list', user: @user, book: @book_new%>
     </div>
     
-<div class="col-lg-8">
-<h2>Book detail</h2>
-<table>
-  <tbody>
-  <tr>
-　<div class="profile-container">
-   <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'png', fallback: "no_image.png" %><br>
-   <%= link_to @user.name, user_path(@user)%></td>
- <td><%= @book.title %></td>
- 
-  <div class="profile-Opinion">
-   <td><%= @book.body %></td>
-   <td><%= link_to "Edit", edit_book_path(@book), class:"edit_#{@book}", class: "btn btn-default" %></td>
-    <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, 
-    class:"destroy_#{@book}", class: "btn btn-default" %></td>
-   </div>
-   </tr>
- </tbody>
-</table>
+    <div class="col-lg-8">
+        <h2>Book detail</h2>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'png', fallback: "no_image.png" %><br>
+                    <%= link_to @user.name, user_path(@user)%></td>
+                    <td><%= @book.title %></td>
+                    <td><%= @book.body %></td>
+                    <td><%= link_to "Edit", edit_book_path(@book), class:"edit_#{@book}", class: "btn btn-success" %></td>
+                    <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, 
+                    class:"destroy_#{@book}", class: "btn btn-danger" %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
