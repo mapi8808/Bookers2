@@ -24,9 +24,11 @@
                     <%= link_to @user.name, user_path(@user)%></td>
                     <td><%= @book.title %></td>
                     <td><%= @book.body %></td>
+                    <% if @book.user == current_user %>
                     <td><%= link_to "Edit", edit_book_path(@book), class:"edit_#{@book}", class: "btn btn-success" %></td>
                     <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, 
                     class:"destroy_#{@book}", class: "btn btn-danger" %></td>
+                    <% end %>
                 </tr>
             </tbody>
         </table>
