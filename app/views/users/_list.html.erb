@@ -1,13 +1,15 @@
 <h2>User info</h2>
-<%= attachment_image_tag user, :profile_image, :fill, 90, 90, format: 'png', fallback: "no_image.png" %>
-<p>
-<strong>Name</strong>
-<%= user.name %>
-</p>
-<p>
-<strong>introduction</strong>
-<%= user.introduction %>
-</p>
+<table class = "table">
+<tr><%= attachment_image_tag user, :profile_image, :fill, 90, 90, format: 'png', fallback: "no_image.png" %></tr>
+<tr>
+<th>Name</th>
+<th><%= user.name %></th>
+</tr>
+<tr>
+<th>introduction</th>
+<th><%= user.introduction %></th>
+</tr>
+</table>
 
 <div>
 <%= link_to "ユーザー設定", edit_user_path(user), class: "btn btn-outline-secondary btn-block" %>
