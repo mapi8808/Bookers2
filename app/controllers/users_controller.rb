@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :ensure_correct_user,only: [:edit, :update]
 
   def index
   @users = User.all
@@ -30,5 +31,13 @@ class UsersController < ApplicationController
 private
   def user_params
   params.require(:user).permit(:name, :profile_image, :introduction )
+  end
+  
+  # 他のユーザーの情報変更をしようとしても、自分のユーザー詳細画面に戻るように
+  def ensure_correct_user
+    @user = User.find(params[:id])
+    if @user.id != current_user.id
+      redirect_to user_path(current_user.id)
+    end
   end
 end
