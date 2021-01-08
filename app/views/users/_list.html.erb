@@ -10,10 +10,12 @@
 <th><%= user.introduction %></th>
 </tr>
 <tr>
-  <th><%= "follows: #{user.follower.count}" %></th>
+  <th>follows</th>
+  <th><%= user.follower.count %></th>
 </tr>
 <tr>
-  <th><%= "followers: #{user.followed.count}" %></th>
+  <th>followers</th>
+  <th><%= user.followed.count %></th>
 </tr>
 </table>
 
