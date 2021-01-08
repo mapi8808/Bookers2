@@ -9,8 +9,8 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th style = "width: 40%;">image</th>
-                    <th style = "width: 50%;">name</th>
+                    <th style = "width: 20%;">image</th>
+                    <th style = "width: 70%;">name</th>
                     <th style = "width: 10%;"></th>
                 </tr>
             </thead>
@@ -20,6 +20,15 @@
                     <tr>
                         <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'png', fallback: "no_image.png" %></td>
                         <td><h3 class="profile-name"><%= user.name %></h3></td>
+                        <% if user_signed_in? %>
+                                <td>
+                                <% if current_user.following?(user) %>
+                                    <%= link_to 'フォロー外す', unfollow_path(user.id), method: :POST %>
+                                <% else %>
+                                    <%= link_to 'フォローする', follow_path(user.id), method: :POST %>
+                                <% end %>
+                                </td>
+                        <% end %>
                         <td><%= link_to 'Show', user_path(user.id), class:"show_#{user.id}" %></td>
                     </tr>
                 <% end %>
