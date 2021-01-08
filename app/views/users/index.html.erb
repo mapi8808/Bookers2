@@ -2,16 +2,18 @@
      <div class="col-md-3" >
       <%= render 'users/list', user: @user, book: @book_new%>
     </div>
-    
-    
+
+
     <div class="offset-md-1 col-md-8">
         <h2>Users</h2>
         <table class="table">
             <thead>
                 <tr>
-                    <th style = "width: 20%;">image</th>
-                    <th style = "width: 70%;">name</th>
-                    <th style = "width: 10%;"></th>
+                    <th style = "width: 10%;">image</th>
+                    <th style = "width: 15%;">name</th>
+                    <th style = "width: 25%;"></th>
+                    <th style = "width: 30%;"></th>
+                    <th style = "width: 20%;"></th>
                 </tr>
             </thead>
 
@@ -20,6 +22,8 @@
                     <tr>
                         <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'png', fallback: "no_image.png" %></td>
                         <td><h3 class="profile-name"><%= user.name %></h3></td>
+                        <td><%= "フォロー数: #{user.follower.count}" %></td>
+                        <td><%= "フォロワー数: #{user.followed.count}" %></td>
                         <% if user_signed_in? %>
                                 <td>
                                 <% if current_user.following?(user) %>
