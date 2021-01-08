@@ -16,9 +16,19 @@
     </div>
 
 
-    <div class="offset-md-1 col-md-8">
+    <div class="col-md-8 offset-md-1">
         <h2>Book detail</h2>
         <table class="table">
+            <thead>
+                <tr>
+                    <th style = "width: 30%;"></th>
+                    <th style = "width: 20%;">Title</th>
+                    <th style = "width: 20%;">Opinion</th>
+                    <th style = "width: 10%;"></th>
+                    <th style = "width: 20%;"></th>
+                </tr>
+            </thead>
+            
             <tbody>
                 <tr>
                     <td>
@@ -54,27 +64,31 @@
                             <p>コメント件数：<%= @book.book_comments.count %></p>
                             </div>
                         </td>
+        </div>
+            <div class="col-md-4">
                         <tr>
-                            <td>
-                                <% @book.book_comments.each do |book_comment| %>
-                                    <%= image_tag("no_image.png") %>
-                                    <%= book_comment.user.name %>
-                                    <%= book_comment.comment %>
-                                    <% if book_comment.user == current_user %>
-                                    <%= link_to "Destroy", book_book_comment_path(book_comment.book, book_comment), method: :delete %>
-                                    <% end %>
+                        <% @book.book_comments.each do |book_comment| %>
+                            <td><%= image_tag("no_image.png") %>
+                                <%= book_comment.user.name %>
+                                <%= book_comment.comment %>
+                                <% if book_comment.user == current_user %>
+                                <%= link_to "Destroy", book_book_comment_path(book_comment.book, book_comment), method: :delete %>
+                                </td>
                                 <% end %>
-                            </td>
+                        <% end %>
                         </tr>
                     </td>
                 </tr>
+            
             </tbody>
         </table>
-        <div class="offset-md-1 col-md-8">
+        <div class="col-md-9">
         <div class="new-comment">
             <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
                 <%= f.text_area :comment, rows:'5',placeholder: "" %>
+                <div>
                 <%= f.submit "送信" %>
+                </div>
             <% end %>
             </div>
          </div>
