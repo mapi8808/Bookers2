@@ -9,6 +9,12 @@
 <th>introduction</th>
 <th><%= user.introduction %></th>
 </tr>
+<tr>
+  <th><%= "follows: #{user.follower.count}" %></th>
+</tr>
+<tr>
+  <th><%= "followers: #{user.followed.count}" %></th>
+</tr>
 </table>
 
 <div class='row'>
