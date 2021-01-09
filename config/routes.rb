@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'book_comments/create'
   get 'book_comments/destroy'
   get 'home/about'
+  get 'users/follow'
+  get 'users/followers'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'home#top'
   resources :home
