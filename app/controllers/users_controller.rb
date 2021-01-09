@@ -18,9 +18,13 @@ class UsersController < ApplicationController
   end
   
   def follow
+    @users = User.all
+    @user = current_user
   end
   
   def followers
+    @users = User.all
+    @user = current_user
   end
 
   def update
