@@ -13,12 +13,12 @@
             </thead>
 
             <tbody>
-                <% @users.each do |user| %>
+                <% @follow.each do |follow| %>
                     <tr>
                         <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'png', fallback: "no_image.png" %></td>
-                        <td><h3 class="profile-name"><%= user.name %></h3></td>
-                        <td><%= "フォロー数: #{user.follower.count}" %></td>
-                        <td><%= "フォロワー数: #{user.followed.count}" %></td>
+                        <td><h3 class="profile-name"><%= follow.name %></h3></td>
+                        <td><%= "フォロー数: #{follow.follower.count}" %></td>
+                        <td><%= "フォロワー数: #{follow.followed.count}" %></td>
 
                                 <td>
                                 <% if user == current_user %>

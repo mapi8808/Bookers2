@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   get 'book_comments/create'
   get 'book_comments/destroy'
   get 'home/about'
-  get 'users/follow'
-  get 'users/followers'
+  get 'users/:id/follow' => 'users#follow', as: 'users_follow' 
+  get 'users/:id/followers' => 'users#followers', as: 'users_followers'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'home#top'
   resources :home
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :book_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
  end
- 
+
   post 'follow/:id' => 'relationships#follow', as: 'follow' # フォローする
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # フォロー外す
 end

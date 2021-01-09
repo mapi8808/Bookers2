@@ -10,21 +10,23 @@ class UsersController < ApplicationController
   def show
   @book_new = Book.new
   @user = User.find(params[:id])
-  @books = @user.books.all
+  @books = @user.books
   end
 
   def edit
-  @user = User.find(params[:id]) 
+  @user = User.find(params[:id])
   end
-  
+
   def follow
     @users = User.all
-    @user = current_user
+    @user = User.find(params[:id])
+    @follow = @user.following_user
   end
-  
+
   def followers
     @users = User.all
-    @user = current_user
+    @user = User.find(params[:id])
+    @follower = @user.follower_user
   end
 
   def update
@@ -33,7 +35,7 @@ class UsersController < ApplicationController
      flash[:update] = "You have updated user successfully."
      redirect_to user_path(@user)
      else
-      @users = User.find(params[:id]) 
+      @users = User.find(params[:id])
       render :edit
      end
   end
@@ -42,7 +44,7 @@ private
   def user_params
   params.require(:user).permit(:name, :profile_image, :introduction )
   end
-  
+
   # 他のユーザーの情報変更をしようとしても、自分のユーザー詳細画面に戻るように
   def ensure_correct_user
     @user = User.find(params[:id])
