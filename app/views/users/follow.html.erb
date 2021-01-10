@@ -21,15 +21,15 @@
                         <td><%= "フォロワー数: #{follow.followed.count}" %></td>
 
                                 <td>
-                                <% if user == current_user %>
-                                <% elsif current_user.following?(user) %>
-                                    <%= link_to 'フォロー外す', unfollow_path(user.id), method: :POST %>
+                                <% if follow == current_user %>
+                                <% elsif current_user.following?(follow) %>
+                                    <%= link_to 'フォロー外す', unfollow_path(follow.id), method: :POST %>
                                 <% else %>
-                                    <%= link_to 'フォローする', follow_path(user.id), method: :POST %>
+                                    <%= link_to 'フォローする', follow_path(follow.id), method: :POST %>
                                 <% end %>
                                 </td>
 
-                        <td><%= link_to 'Show', user_path(user.id), class:"show_#{user.id}" %></td>
+                        <td><%= link_to 'Show', user_path(follow.id), class:"show_#{follow.id}" %></td>
                     </tr>
                 <% end %>
             </tbody>
