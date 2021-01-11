@@ -11,12 +11,11 @@ class Book < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end 
   
-  def self.search(search)
-    if search
-        Book.where(['item_name LIKE (?)', "%#{search}%"])
+  def Book.search(search, user_or_post)
+    if user_or_post == "2"
+       Book.where(['name LIKE ?', "%#{search}%"])
     else
-        Book.all 
+       Book.all
     end
   end
-   
 end

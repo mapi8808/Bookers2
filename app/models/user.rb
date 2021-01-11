@@ -35,12 +35,11 @@ class User < ApplicationRecord
     following_user.include?(user)
   end
   
-  def self.search(search)
-    if search
-        User.where(['item_name LIKE (?)', "%#{search}%"])
+  def User.search(search, user_or_post)
+    if user_or_post == "1"
+       User.where(['name LIKE ?', "%#{search}%"])
     else
-        User.all 
+       User.all
     end
-  end
+  
 end
-

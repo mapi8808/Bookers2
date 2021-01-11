@@ -1,7 +1,10 @@
 class SearchController < ApplicationController
   def search
-    @users = Users.search(params[:search])
-    @books = Books.search(params[:search])
-    @tasks = @tasks.where('title LIKE ?', "%#{params[:search]}%") if params[:search].present?
+    @user_or_book = params[:option]
+    if @user_or_book == "1"
+      @users = User.search(params[:search], @user_or_post)
+    else
+      @books = Book.search(params[:search], @user_or_post)
+    end
   end
 end
