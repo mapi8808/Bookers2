@@ -1,5 +1,6 @@
 <%= form_with url: search_search_path, method: :get, local: true do |f| %>
   <%= f.text_field :search %>
+  <%= select_tag(:option, options_for_select([["User", "1"],["Book","2"]]))%> 
   <%= f.submit 'Search', name: nil %>
 <% end %>
 

@@ -22,6 +22,9 @@
  
                 <% if user_signed_in? %>
                   <li>
+                    <%= render 'search/search', user: @user, book: @book%>
+                  </li>
+                  <li>
                     <%= link_to "Home", user_path(current_user.id), class: "fas fa-home nav-link text-light" %> 
                   </li>
                   <li>
