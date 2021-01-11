@@ -1,2 +1,27 @@
-<h1>Search#search</h1>
-<p>Find me in app/views/search/search.html.erb</p>
+<% if @user_or_post == "1"%>
+    <h1>User</h1>
+    <table>
+        <% @users.each do |user| %>
+        <thead>
+            <tr>
+                <th></th>
+                <th><%= user.name %> </th>
+            </tr>
+        </thead>
+        <% end %>
+    </table>
+
+<% elsif @user_or_post == "2" %>
+    <h2>Post</h2>
+    <table>
+    <% @posts.each do |post| %>
+        <thead>
+            <tr>
+                <th></th>
+                <th><%= post.title %></th>
+            </tr>
+        </thead>
+    <% end %>
+    </table>
+<% else %>
+<% end %>
