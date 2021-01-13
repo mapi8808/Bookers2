@@ -46,7 +46,7 @@
                                 class:"destroy_#{@book}", class: "btn btn-danger" %></td>
                             <% end %>
                         <td>
-                            <%= render 'favorite', book: @book %>
+                            <%= render 'favorites/favorite', book: @book %>
                         </td>
                         <td>
                             <div class="comments">
@@ -73,7 +73,7 @@
         </table>
         <div class="col-md-9">
         <div class="new-comment">
-            <%= form_with(model:[@book, @book_comment]  do |f| %>
+            <%= form_with model:[@book, @book_comment] do |f| %>
                 <%= f.text_area :comment, rows:'5',placeholder: "" %>
                 <div>
                 <%= f.submit "送信" %>
