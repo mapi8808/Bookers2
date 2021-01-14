@@ -1,4 +1,4 @@
 $(".comments").html("コメント数: <%= @book.book_comments.count %>");
 $(".comment__table").html("<%= j(render 'book_comments/book_comment', book: @book) %>");
-$("#book_comment_comment").val("");
+$("textarea").val("");
 

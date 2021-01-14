@@ -9,8 +9,8 @@ class BookCommentsController < ApplicationController
   end
 
   def destroy
-    @book = Book.find(params[:id])
-    @book_comment = @book.bookcomments.find(params[:id])
+    @book = Book.find(params[:book_id])
+    book_comment = BookComment.find(params[:id])
     book_comment.destroy
   end
 

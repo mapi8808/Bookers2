@@ -59,12 +59,10 @@
             <%= render 'book_comments/book_comment', book: @book  %>
         </div>
         <div class = 'book_comment'>
-            <div id="book_comment_comment">
-                <%= form_with(model:[@book, @book_comment], remote: true) do |f| %>
-                    <%= f.text_area :comment, rows:'5',placeholder: "" %>
-                    <%= f.submit "送信" %>
+            <%= form_with(model:[@book, @book_comment], remote: true) do |f| %>
+                <%= f.text_area :comment, rows:'5',placeholder: "" %>
+                <%= f.submit "送信" %>
                 <% end %>
-            </div>
         </div>
     </div>
 </div>
