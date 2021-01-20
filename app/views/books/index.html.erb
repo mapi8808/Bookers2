@@ -32,9 +32,9 @@
                       <td>
                       <%= book.body %>
                       </td>
-                     <td id = "book_<%= book.id %>">
-                       <%= render 'favorites/favorite', book: book %>
-                    </td>
+                         <td id = "book_<%= book.id %>">
+                           <%= render 'favorites/favorite', book: book %>
+                        </td>
                         <td>
                             <div class="comments">
                             <p>コメント件数：<%= book.book_comments.count %></p>

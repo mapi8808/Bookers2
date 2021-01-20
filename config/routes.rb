@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'book_comments/create'
   get 'book_comments/destroy'
   get 'home/about'
-  get 'users/:id/follow' => 'users#follow', as: 'users_follow' 
+  get 'users/:id/follow' => 'users#follow', as: 'users_follow'
   get 'users/:id/followers' => 'users#followers', as: 'users_followers'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'home#top'
